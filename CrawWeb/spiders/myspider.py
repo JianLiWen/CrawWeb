@@ -16,9 +16,10 @@ class Hongxiuwangzhan(scrapy.Spider):
         #将存储方式由array数组变为字符串
         answer = "\n".join(a)
         question = "\n".join(q)
+        answers = answer.replace('\n', '')
         item = CrawwebItem()
         item['question'] = question
-        item['answer'] = answer
+        item['answer'] = answers
         yield item
         pass
 
